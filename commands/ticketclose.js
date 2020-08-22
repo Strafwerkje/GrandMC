@@ -14,7 +14,7 @@ module.exports.run = async(Client, message, args) =>{
         var ticketLog = new discord.MessageEmbed()
          .setTitle("Ticket Log, " + message.channel.name)
          .setColor("#3de361")
-         .setFooter("DutchFM Bot")
+         .setFooter("GrandMC BOT")
          .setTimestamp()
          .setDescription(`de Ticket is gesloten door. ${message.author.username}`)
    

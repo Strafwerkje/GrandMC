@@ -54,7 +54,7 @@ var joinEmbed = new discord.MessageEmbed()
 client.on("ready", async() => {
 
     console.log(`${client.user.username} is online!`);
-    client.user.setActivity(`Mus!c`, {type: "LISTENING"});
+    client.user.setActivity(`GrandMC`, {type: "STREAMING"});
 
 });
 client.on("message", async message => {
