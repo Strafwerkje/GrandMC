@@ -18,7 +18,7 @@ module.exports.run = async(Client, message, args) =>{
          .setTimestamp()
          .setDescription(`de Ticket is gesloten door. ${message.author.username}`)
    
-        var logsTicket = message.member.guild.channels.cache.find(channel => channel.name === "log")
+        var logsTicket = message.member.guild.channels.cache.find(channel => channel.name === "「🔒」bot-logs")
         if (!logsTicket) return message.reply("We can't find the log channel");
 
         logsTicket.send(ticketLog);

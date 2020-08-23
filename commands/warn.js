@@ -21,14 +21,14 @@ module.exports.run = async (bot, message, args) => {
     if (!reason) return message.channel.send("Gelieve een reden op te geven.")
 
     var reportEmbed = new discord.MessageEmbed()
-        .setDescription("u heeft en warn ontvangen.")
+        .setDescription("**LET OP U BENT GEWARNT!")
         .setColor("ff0000")
-        .addField("warn gebruiker", `${user} Door staff op deze Server.  ${message.guild.name}`)
-        .addField("gewarnd door", `${message.author} op de Server  ${message.guild.name}`)
-        .addField("Reden", reason)
+        .addField("warn gebruiker:", `${user} Door staff op deze Server:  ${message.guild.name}`)
+        .addField("gewarnd door:", `${message.author} op de Server:  ${message.guild.name}`)
+        .addField("Reden:", reason)
         .setFooter(message.createdAt);
 
-        var channelReport  = message.guild.channels.cache.find(ch => ch.name === "algemeen");
+        var channelReport  = message.guild.channels.cache.find(ch => ch.name === "「🔒」bot-logs");
         if (!channelReport) return message.channel.send("Kan het kanaal niet vinden");
 
     // ZORG VOOR ADMINISTRATOR RECHTEN OP BOT.
