@@ -8,7 +8,7 @@ module.exports.run = async (client, message, args) => {
     .setColor("#0099ff")
     .setDescription("**● Speler commands: /n ?help /n > Krijg dit command te zien! /n")
 
-        return message.channel.send(embed);
+        return message.channel.send(help);
    
 
 }
