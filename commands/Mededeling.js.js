@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
         var useMessage = new discord.MessageEmbed()
             .setTitle("Gebruik")
             .setColor("#00ee00")
-            .setDescription(`Maak een Mededelingen door gebruik te maken van: \n !Mededelingen Titel ${splitser} Bericht ${splitser} Kleur ${splitser} Kanaal`);
+            .setDescription(`?say bericht // Kleur (optie)`);
 
         return message.channel.send(useMessage);
 
@@ -25,17 +25,14 @@ module.exports.run = async (bot, message, args) => {
     args = args.join(" ").split(splitser);
 
     // Nakijken als je channel meegeeft of een kleur. Dit plaatsen we hier om een error te voorkomen bij de trim later.
-    if (args[2] == undefined) args[2] = "#eeeeee";
-    if (args[3] == undefined) args[3] = "general";
+    if (args[2] == undefined) args[2] = "##144b16";
 
     // Opties die gezet worden als er iets niet wordt meegeven.
     // Voor het kanaal halen we de spaties weg.
     var options = {
 
-        titel: args[0] || "Melding",
-        bericht: args[1] || "Geen inhoud opgegeven",
-        kleur: args[2].trim(),
-        kanaal: args[3].trim()
+        bericht: args[0] || "Geen inhoud opgegeven",
+        kleur: args[1].trim(),
 
     }
 
@@ -44,9 +41,9 @@ module.exports.run = async (bot, message, args) => {
 
     // Het bericht wat wordt verzonden.
     var announcementMessage = new discord.MessageEmbed()
-        .setTitle("Mededelingen:")
+        .setTitle("Bericht:")
         .setColor(options.kleur)
-        .setDescription(`Bericht van ${announcer} \n\n ${options.titel} \n\n ${options.bericht} \n`)
+        .setDescription(`${options.bericht} `)
         .setTimestamp()
 
     // Kanaal krijgen waar het verzonden moet worden.
@@ -59,6 +56,6 @@ module.exports.run = async (bot, message, args) => {
 }
 
 module.exports.help = {
-    name: "Mededeling",
+    name: "say",
     description: "dit is Onze aankondiging commando."
 }
