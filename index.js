@@ -76,7 +76,7 @@ client.on("guildMemberAdd" , member => {
      .setDescription(`Welkom **${member.user.username}** op de server van **➩ GrandMC!**`)
      .setColor("#1f2e18")
      .setTimestamp()
-     .setImage(`${member.user.avatarURL}`)
+     .setThumbnail(`${member.user.avatar}`)
    
     channel.send(joinEmbed);
        
