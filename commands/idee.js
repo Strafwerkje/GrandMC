@@ -12,7 +12,7 @@ module.exports.run = async (bot, message, args) => {
         .addField("Idee: ", idee)
         .addField("Ingezonden door: ", message.author);
  
-    var ideeChannel = message.guild.channels.cache.find(ch => ch.name === "「📃」idee");
+    var ideeChannel = message.guild.channels.cache.find(ch => ch.name === "「📃」ideeën");
     if (!ideeChannel) return message.guild.send("Kan het kanaal niet vinden");
  
     ideeChannel.send(ideeEmbed).then(embedMessage => {
