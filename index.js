@@ -57,6 +57,31 @@ client.on("ready", async() => {
     client.user.setActivity(`GrandMC`, {type: "STREAMING"});
 
 });
+
+client.on("guildMemberAdd" , member => {
+
+
+    var role = member.guild.roles.cache.get(`735938601258582017`);
+   
+     if(!role) return;
+   
+     member.roles.add(role);
+   
+     var channel = member.guild.channels.cache.get(`736106976286867497`);
+   
+     if(!channel) return;
+   
+     var joinEmbed = new discord.MessageEmbed()
+     .setAuthor(`${member.user.tag}`)
+     .setDescription(`Welkom **${member.user.username}** op de server van **➩ GrandMC!**`)
+     .setColor("#1f2e18")
+     .setTimestamp()
+     .setImage(`${member.user.avatar}`)
+   
+    channel.send(joinEmbed);
+       
+    }) 
+
 client.on("message", async message => {
 
     if (message.author.bot) return;
