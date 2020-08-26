@@ -7,7 +7,7 @@ module.exports.run = async (bot, message, args) => {
     if (!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("Sorry jij kan dit niet doen");
 
     // Met dit gaan we tekst splitsen.
-    var splitser = " ";
+    var splitser = "-";
 
     // Nakijken als men wel gegevens meegeeft.
     if (args[0] == null) {
