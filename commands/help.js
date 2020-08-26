@@ -7,6 +7,8 @@ module.exports.run = async (bot, message, args) => {
     .setTitle("Dit zijn al onze help commands!")
     .setDescription("**Player commands:** /n ?help /n > Krijg dit command te zien! /n ?ticket /n > Maak een ticket aan om hulp te krijgen van ons support team! /n")
     .setTimestamp()
+
+    message.channel.send(help);
 }
 module.exports.help = {
     name: "help",
