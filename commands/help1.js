@@ -5,7 +5,7 @@ module.exports.run = async (client, message, args) => {
  
     .setTitle(`**● Help commands:**`)
     .setTimestamp()
-    .setColor("#0099ff")
+    .setColor("#1f2e18")
     .setDescription("**Speler commands:** \n ?help \n > Krijg dit command te zien! \n ?ticket \n > Maak een ticket aan! \n ?serverinfo \n > Krijg alle informatie over onze  server! \n \n **Moderation Commands:** \n ?ban \n > Ban iemand van de server! \n ?kick \n > Kick iemand van de server! \n ?mute \n > Zorg dat iemand niet meer kan praten! \n ?warn \n > Geef iemand een waarschuwing in de server! \n ?close \n > Sluit een ticket van iemand! \n ?giveaway \n > Maak een giveaway aan!")
 
         return message.channel.send(help);

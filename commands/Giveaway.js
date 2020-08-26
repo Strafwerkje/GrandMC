@@ -27,7 +27,7 @@ module.exports.run = async (bot, message, args) => {
     .setTitle("🎉**Giveaway time!**🎉")
     .setFooter(`End: ${dateEnd}`)
     .setDescription(item)
-    .setColor("#3bb0d8");
+    .setColor("#1f2e18");
 
     var embedSend = await message.channel.send(giveawayEmbed);
     embedSend.react("🎉");
