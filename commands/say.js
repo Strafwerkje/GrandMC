@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
         var useMessage = new discord.MessageEmbed()
             .setTitle("Gebruik")
             .setColor("#00ee00")
-            .setDescription(`?say bericht // Kleur (optie)`);
+            .setDescription(`?say title // bericht // kleur (optioneel)`);
 
         return message.channel.send(useMessage);
 
@@ -25,14 +25,16 @@ module.exports.run = async (bot, message, args) => {
     args = args.join(" ").split(splitser);
 
     // Nakijken als je channel meegeeft of een kleur. Dit plaatsen we hier om een error te voorkomen bij de trim later.
-    if (args[2] == undefined) args[2] = "##144b16";
+    if (args[2] == undefined) args[2] = "#1f2e18";
+    if (args[3] == undefined) args[3] = "general";
 
     // Opties die gezet worden als er iets niet wordt meegeven.
     // Voor het kanaal halen we de spaties weg.
     var options = {
 
-        bericht: args[0] || "Geen inhoud opgegeven",
-        kleur: args[1].trim(),
+        titel: args[0] || "Title",
+        bericht: args[1] || "Geen inhoud opgegeven",
+        kleur: args[2].trim(),
 
     }
 
@@ -43,15 +45,11 @@ module.exports.run = async (bot, message, args) => {
     var announcementMessage = new discord.MessageEmbed()
         .setTitle("Bericht:")
         .setColor(options.kleur)
-        .setDescription(`${options.bericht} `)
+        .setDescription(`${options.titel} \n ${options.bericht} \n`)
         .setTimestamp()
 
     // Kanaal krijgen waar het verzonden moet worden.
-        var announceChannel  = message.guild.channels.cache.find(ch => ch.name === "「📌」mededelingen");
-    if (!announceChannel) return message.channel.send("Kan het kanaal niet vinden");
-
-    // Zenden van het bericht.
-    announceChannel.send(announcementMessage);
+    message.channel.send(announcementMessage);
 
 }
 
