@@ -48,15 +48,14 @@ module.exports.run = async (client, message, args) => {
             `\u200b`
             ])
         .addField(`_**Botinfo:**_`, [
-            `**👤 | Bot name** ${client.user.username}`,
+            `**👤 | Bot name:** ${client.user.username}`,
             `**📧 | Bot ID:** ${client.user.id}`,
             `**👋 | Bot since:** ${client.user.createdAt}`,
             `**🔢 | Bot on servers:** ${client.guilds.cache.size}`,
             `**💻 | Bot prefix:** ${botConfig.prefix}`,
-            `**✨ | Bot creater:** ${botConfig.owner}`,
+            `**✨ | Bot creater:** 𝕊𝕥𝕣𝕒𝕗𝕨𝕖𝕣𝕜𝕛𝕖#8485`,
             `\u200b`
             ])
-        .setFooter("DutchFM Bot")
         return message.channel.send(embed);
    
 
