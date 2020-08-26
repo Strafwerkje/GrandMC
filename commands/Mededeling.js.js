@@ -50,7 +50,7 @@ module.exports.run = async (bot, message, args) => {
         .setTimestamp()
 
     // Kanaal krijgen waar het verzonden moet worden.
-        var announceChannel  = message.guild.channels.cache.find(ch => ch.name === "「🔒」bot-logs");
+        var announceChannel  = message.guild.channels.cache.find(ch => ch.name === "「📌」mededelingen");
     if (!announceChannel) return message.channel.send("Kan het kanaal niet vinden");
 
     // Zenden van het bericht.
