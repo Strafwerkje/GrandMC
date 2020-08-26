@@ -28,9 +28,8 @@ module.exports.run = async (client, message, args) => {
  
     .setTitle(`**● Server Name:** ➩ GrandMC`,)
     .setTimestamp()
-    .setFooter(botConfig.footer)
     .setThumbnail(message.author.displayAvatarURL())
-    .setColor("#0099ff")
+    .setColor("#1f2e18")
 
     .addField("_**Algemeen:**_", [
         `**💥 | Server Name:** ${message.guild.name}`,
