@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
     // Voor het kanaal halen we de spaties weg.
     var options = {
 
-        titel: args[0] || "Title",
+        titel: args[0] || "Geen title opgegeven",
         bericht: args[1] || "Geen inhoud opgegeven",
         kleur: args[2].trim(),
 
@@ -43,9 +43,9 @@ module.exports.run = async (bot, message, args) => {
 
     // Het bericht wat wordt verzonden.
     var announcementMessage = new discord.MessageEmbed()
-        .setTitle("Bericht:")
+        .setTitle(`${options.titel}`)
         .setColor(options.kleur)
-        .setDescription(`${options.titel} \n ${options.bericht} \n`)
+        .setDescription(`${options.bericht} \n`)
         .setTimestamp()
 
     // Kanaal krijgen waar het verzonden moet worden.
