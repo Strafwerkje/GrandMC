@@ -6,7 +6,7 @@ module.exports.run = async (client, message, args) => {
     .setTitle(`**● Help commands:**`)
     .setTimestamp()
     .setColor("#0099ff")
-    .setDescription("**● Speler commands: /n ?help /n > Krijg dit command te zien! /n")
+    .setDescription("**● Speler commands:** \n ?help \n > Krijg dit command te zien! \n")
 
         return message.channel.send(help);
    
