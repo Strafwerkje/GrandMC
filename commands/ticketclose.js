@@ -4,7 +4,7 @@ module.exports.run = async(Client, message, args) =>{
 
      message.delete();
 
-    const categoryID = "736133679826599997";
+    const categoryID = "736170124062621757";
 
     if(! message.member.roles.cache.has("736108236134154273")) return message.reply("You can't use this command");
 

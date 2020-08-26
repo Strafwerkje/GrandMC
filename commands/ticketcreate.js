@@ -3,7 +3,7 @@ const botConfig = require("../botconfig.json");
 
 module.exports.run = async (bot, message, args) => {
 
-    const categoryID = "736133679826599997";
+    const categoryID = "736170124062621757";
 
     var userName = message.author.username;
     var userDiscriminator = message.author.discriminator;
@@ -32,7 +32,7 @@ module.exports.run = async (bot, message, args) => {
 
     message.channel.send(embed);
 
-    message.guild.channels.create("🎫║" + userName.toLowerCase(), { type: 'text' }).then(
+    message.guild.channels.create("「🎫」" + userName.toLowerCase(), { type: 'text' }).then(
         (createdChannel) => {
             createdChannel.setParent(categoryID).then(
                 (settedParent) => {
