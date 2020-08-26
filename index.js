@@ -27,30 +27,6 @@ fs.readdir("./commands/", (err, files) => {
     })
 
 })
-
-client.on("guildMemberAdd" , member => {
-
-
- var role = member.guild.roles.cache.get(`744865247734661122`);
-
-  if(!role) return;
-
-  member.roles.add(role);
-
-  var channel = member.guild.channels.cache.get(`744516024958976082`);
-
-  if(!channel) return;
-
-var joinEmbed = new discord.MessageEmbed()
-    .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL)
-    .setDescription(`${member.user} joined the server!`)
-    .setColor("#0099ff")
-    .setFooter(`© Mus!c bot message.`)
-    .setTimestamp()
-
-    channel.send(joinEmbed);
-
-})
 client.on("ready", async() => {
 
     console.log(`${client.user.username} is online!`);
@@ -81,7 +57,23 @@ client.on("guildMemberAdd" , member => {
     channel.send(joinEmbed);
        
     }) 
+    client.on("guildMemberRemove" , member => {
 
+   
+        var channel = member.guild.channels.cache.get(`736169487576858635`);
+      
+        if(!channel) return;
+      
+      var leaveEmbed = new discord.MessageEmbed()
+          .setAuthor(`${member.user.tag}`, member.user.displayAvatarURL)
+          .setDescription(`🔴   ${member.user.username} heeft de server verlater er zijn nog** ${member.guild.memberCount} **mensen in de server!  🔴`)
+          .setColor("#FF0000")
+          .setTimestamp()
+          .setThumbnail(member.user.displayAvatarURL())
+      
+          channel.send(leaveEmbed);
+      
+      })
 client.on("message", async message => {
 
     if (message.author.bot) return;
