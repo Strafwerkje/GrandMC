@@ -49,6 +49,7 @@ module.exports.run = async (bot, message, args) => {
                         READ_MESSAGES: true
                     });
 
+
                     settedParent.updateOverwrite(message.author, {
                         CREATE_INSTANT_INVITE: false,
                         VIEW_CHANNEL: true,
@@ -62,7 +63,7 @@ module.exports.run = async (bot, message, args) => {
                     });
                     var embedParent = new discord.MessageEmbed()  
                     .setTitle(`Hallo ${message.author.username}`)
-                    .setDescription("`bedankt voor het maken van uw ticket, u kunt uw klacht/vraag/opmerking alvast achterlaten, ons support team zal dit zo snel mogelijk behandelen")
+                    .setDescription("`bedankt voor het maken van uw ticket, u kunt uw klacht/vraag/opmerking alvast achterlaten, ons @<736108236134154273> zal dit zo snel mogelijk behandelen")
                     .setTimestamp()
  
                     settedParent.send(`<@${message.author.id}>`, embedParent)
